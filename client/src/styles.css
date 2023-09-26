@@ -1,0 +1,189 @@
+html,
+body,
+#root,
+.playground-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #16161D;
+}
+
+.playground-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+}
+
+.playground-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.cm-outer-container {
+  flex: 1;
+}
+
+.cm-editor {
+  flex: 1;
+  height: 100%;
+  position: relative; /* .cm-scroller absolute positioning depends on this*/
+}
+
+.cm-scroller {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  
+  font-family: "Roboto Mono" !important;
+}
+
+.cm-content {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.wrapper {
+  
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  gap: 0.5rem;
+  background-color: #16161D;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 200ms ease-out;
+}
+
+.input-pairs{
+  display: flex;
+  /* align-items: flex-start; */
+  gap: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.input-pairs label{
+  min-width: 10rem;
+  text-align:right;
+  color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+}
+
+
+.wrapper.visible {
+  max-height: 177px;
+}
+
+.collapsed {
+  height: 0;
+  padding: 0;
+}
+
+
+
+input{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid white;
+  background-color: #16161D  ;
+  color: white;
+  font-family: "Roboto Mono";
+  font-size: 16px;
+
+}
+label{
+  
+  font-size: 16px;
+  padding-top: 12px;
+  font-family: "Roboto Mono";
+}
+
+
+
+
+nav {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #16161D;
+  color: white;
+  font-size: 18px;
+}
+
+
+
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: "Roboto Mono";
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+@media (max-width: 629px) {
+  .about {
+    display: none;
+  }
+}
+
+select {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  width: auto;
+  font-family: "Roboto Mono";
+  font-size: 18px;
+  outline: none;
+  appearance: none;
+  text-align: center;
+  text-align-last: center; text-align: center;
+ 
+}
+
+
+
+option {
+  background-color: #16161D;
+  outline: none;
+  font-family: "Roboto";
+  text-align: center;
+}
+
+button:hover,
+select:hover{
+  background-color: grey; 
+}
+
+
+.navbar-right,.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
