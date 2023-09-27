@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server",
-    "build": "webpack"
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "",
