@@ -40,7 +40,7 @@ const PasteIt = () => {
     
       useEffect(() => {
         if (nan_id) {
-          axios.get(`http://localhost:3000/get/${nan_id}`).then((res) => {
+          axios.get(`https://pasteit-be.onrender.com/get/${nan_id}`).then((res) => {
             console.log("Fetched data:", res.data)
             if (res.data) {
               setPaste(res.data);
@@ -98,13 +98,13 @@ const PasteIt = () => {
     }
     if (pasteContent !== "") {
       if(paste.paste===pasteContent || paste.paste===nan_id){
-        navigator.clipboard.writeText(`http://localhost:5000/${nan_id}`);
+        navigator.clipboard.writeText(`https://pasteit-ten.vercel.app/${nan_id}`);
         setSaveText("link copied!");
         return;
       }
       setSaveText("saving...");
       axios
-        .post("http://localhost:3000/add", {
+        .post("https://pasteit-be.onrender.com/add", {
           nan_id: pasteID,
           title: title,
           paste: pasteContent,
@@ -113,7 +113,7 @@ const PasteIt = () => {
         })
         .then(() => {
           const redir = "/" + pasteID;
-          navigator.clipboard.writeText(`http://localhost:5000/${pasteID}`);
+          navigator.clipboard.writeText(`https://pasteit-ten.vercel.app/${pasteID}`);
           setSaveText("link copied!");
           setPasteID(nanoid());
 
